@@ -10,7 +10,7 @@
 
 ## Why this project
 
-I'm transitioning from QA to data analytics. This repo is a portfolio piece — proof that I can frame a strategic question, source public data, run analysis, and arrive at a finding I can defend.
+This repo is a portfolio piece — proof that I can frame a strategic question, source public data, run analysis, and arrive at a finding I can defend.
 
 The starting question:
 
@@ -18,29 +18,12 @@ The starting question:
 
 The short answer: **same race in food delivery, completely different race in quick commerce, and the second race is where the money is going.**
 
-## New here? Start with the walkthrough
-
-If this is your first time looking at this project — including if you're me, the author, opening it for an interview prep session — read [`WALKTHROUGH.md`](./WALKTHROUGH.md). It explains the entire project end-to-end: the structure, the findings, how to run everything, how to talk about it, and what to put on a resume.
-
-There are five documentation files in this repo, each with a different purpose:
-
-- **`WALKTHROUGH.md`** — the complete project tour, 11 sections covering everything
-- **`METHODOLOGY.md`** — how the analysis was actually built, step by step; the thinking behind every choice
-- **`INTERVIEW_PREP.md`** — study sheet for interviews; questions and ready answers
-- **`GITHUB_SETUP.md`** — copy-paste guide to publish this project as a live website
-- **`analysis.md`** — the full written argument with all three findings unpacked
-
-Plus [`data/SOURCES.md`](./data/SOURCES.md), which documents every data source and every estimate.
 
 ## What's in this repo
 
-```
-zomato-vs-swiggy-teardown/
-├── README.md                          ← you are here
-├── WALKTHROUGH.md                     ← complete tour of the project
-├── METHODOLOGY.md                     ← how the analysis was built, step by step
-├── INTERVIEW_PREP.md                  ← study sheet for interviews
-├── GITHUB_SETUP.md                    ← copy-paste guide to get it live
+
+zomato-swiggy-product-teardown/
+├── README.md
 ├── analysis.md                        ← full write-up with findings + caveats
 ├── index.html                         ← the dashboard (root copy, for GitHub Pages)
 ├── data/
@@ -57,7 +40,6 @@ zomato-vs-swiggy-teardown/
 ├── requirements.txt
 ├── LICENSE
 └── .gitignore
-```
 
 ## A note on names
 
@@ -113,18 +95,10 @@ duckdb -c ".read sql/analysis.sql"
 - **Currency:** ₹ crore (1 crore = 10 million ≈ $120K USD).
 - **Caveats:** Detailed in [`data/SOURCES.md`](./data/SOURCES.md). A few cells are best-fit estimates where the company didn't disclose the exact figure in a quarter — flagged in the `source_tag` column.
 
-## The QA-to-analytics angle
-
-Two QA muscles that translate directly to analytics:
+## Analytical approach
 
 - **Edge-case skepticism** — any number that looks too clean usually isn't. I flag QoQ dips, definitional inconsistencies, and metric reframings throughout.
 - **Failure-mode thinking** — for each trend, ask: what would have to be true for this to reverse? That section sits at the bottom of `analysis.md`.
-
-These showed up concretely in dataset assembly:
-
-- Both companies' AOV definitions changed mid-period (platform-fee inclusion). Without flagging, the AOV chart would show a sudden spike that's actually a definitional artifact.
-- Instamart's Q4 FY25 GOV looked like a typo at first (sequential decline). It turned out to be a deliberate growth pause to consolidate dark store buildout — confirmed via investor call transcripts.
-
 ## What I'd build next
 
 Three follow-up analyses I'd run with internal data access:
