@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Eternal made quick commerce its main business. Swiggy didn't.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#d4c5b0;        /* clay-stone */
+    --ink:#1e1410;          /* coffee-black */
+    --ink-soft:#3a2e26;
+    --ink-faint:#7a6b5e;
+    --winner:#c9532b;       /* brick — only the winner gets color */
+    --winner-soft:rgba(201,83,43,0.13);
+    --rule:#a89880;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Funnel Display',sans-serif;
+    font-weight:400;
+    font-feature-settings:"ss01" 1,"ss02" 1;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--ink);color:var(--paper);}
+
+  .frame{
+    max-width:1280px;
+    margin:0 auto;
+    padding:80px 64px 120px;
+  }
+
+  /* =================================================================
+     OPENING — the question, then the answer
+     ================================================================= */
+  .opener{
+    margin-bottom:160px;
+  }
+  .opener .meta{
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-faint);
+    letter-spacing:0.02em;
+    margin-bottom:48px;
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .opener .meta span{position:relative;}
+  .opener .meta span + span::before{
+    content:'';
+    position:absolute;
+    left:-17px;top:50%;
+    width:2px;height:2px;
+    background:var(--ink-faint);
+    border-radius:50%;
+  }
+
+  .lede{
+    font-size:clamp(1.6rem, 2.6vw, 2.4rem);
+    font-weight:400;
+    line-height:1.18;
+    letter-spacing:-0.02em;
+    max-width:980px;
+    margin-bottom:24px;
+    color:var(--ink);
+  }
+  .lede em{
+    font-style:normal;
+    font-weight:600;
+    color:var(--winner);
+  }
+  .lede .quiet{
+    color:var(--ink-faint);
+    font-weight:300;
+  }
+
+  /* =================================================================
+     THE ENORMOUS NUMBER — the one that wins the argument
+     ================================================================= */
+  .answer{
+    margin:120px 0 160px;
+    position:relative;
+  }
+  .answer .setup{
+    font-size:16px;
+    font-weight:500;
+    color:var(--ink-soft);
+    line-height:1.5;
+    max-width:480px;
+    margin-bottom:40px;
+  }
+  .answer .number{
+    font-size:clamp(12rem, 32vw, 28rem);
+    font-weight:300;
+    line-height:0.82;
+    letter-spacing:-0.06em;
+    color:var(--winner);
+    font-variant-numeric:lining-nums;
+    margin-left:-0.06em;        /* optical alignment of the 5's stem */
+  }
+  .answer .number sup{
+    font-size:0.32em;
+    vertical-align:0.5em;
+    font-weight:400;
+    letter-spacing:-0.02em;
+  }
+  .answer .caption{
+    margin-top:24px;
+    font-size:18px;
+    font-weight:500;
+    line-height:1.45;
+    max-width:680px;
+    color:var(--ink);
+  }
+  .answer .caption .swg{color:var(--ink-faint);}
+
+  /* =================================================================
+     SECTION HEADERS — sentences, not labels
+     ================================================================= */
+  .movement{
+    margin:160px 0 80px;
+    border-top:1px solid var(--rule);
+    padding-top:48px;
+  }
+  .movement-tag{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-faint);
+    letter-spacing:0.04em;
+    margin-bottom:16px;
+  }
+  .movement h2{
+    font-size:clamp(2.2rem, 4vw, 3.4rem);
+    font-weight:500;
+    line-height:1.05;
+    letter-spacing:-0.025em;
+    max-width:900px;
+    color:var(--ink);
+  }
+  .movement h2 em{
+    font-style:normal;
+    color:var(--winner);
+    font-weight:600;
+  }
+
+  /* =================================================================
+     PROSE — the connective tissue
+     ================================================================= */
+  .prose{
+    font-size:17px;
+    line-height:1.55;
+    max-width:680px;
+    color:var(--ink-soft);
+    margin:24px 0;
+  }
+  .prose p{margin-bottom:14px;}
+  .prose strong{color:var(--ink);font-weight:600;}
+
+  /* inline mini-chart inside a sentence */
+  .inline-spark{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    vertical-align:-3px;
+    margin:0 2px;
+  }
+  .inline-spark svg{display:block;}
+
+  /* =================================================================
+     CHART CARRIERS
+     ================================================================= */
+  .chart-block{
+    margin:64px 0;
+  }
+  .chart-block.huge{margin:96px 0 120px;}
+  .chart-title{
+    font-size:clamp(1.5rem, 2.4vw, 2.1rem);
+    font-weight:500;
+    line-height:1.18;
+    letter-spacing:-0.02em;
+    margin-bottom:8px;
+    max-width:920px;
+    color:var(--ink);
+  }
+  .chart-title em{
+    font-style:normal;
+    color:var(--winner);
+    font-weight:600;
+  }
+  .chart-deck{
+    font-size:14.5px;
+    color:var(--ink-faint);
+    font-weight:500;
+    margin-bottom:36px;
+    max-width:680px;
+  }
+  .chart-svg{
+    width:100%;
+    height:auto;
+    display:block;
+    overflow:visible;
+  }
+
+  /* chart text */
+  .chart-svg text{
+    font-family:'Funnel Display',sans-serif;
+    font-weight:500;
+    fill:var(--ink);
+  }
+  .chart-svg .ax-tick{
+    font-size:11px;
+    fill:var(--ink-faint);
+    font-weight:500;
+  }
+  .chart-svg .ax-label{
+    font-size:11px;
+    fill:var(--ink-faint);
+    font-weight:500;
+  }
+  .chart-svg .pt-label{
+    font-size:12px;
+    font-weight:600;
+    fill:var(--ink);
+  }
+  .chart-svg .pt-label.win{fill:var(--winner);}
+  .chart-svg .callout{
+    font-size:12.5px;
+    font-weight:500;
+    fill:var(--ink-soft);
+  }
+  .chart-svg .callout-strong{
+    font-size:13px;
+    font-weight:600;
+    fill:var(--ink);
+  }
+  .chart-svg .gridline{
+    stroke:var(--rule);
+    stroke-width:0.5;
+    fill:none;
+  }
+  .chart-svg .baseline{
+    stroke:var(--ink-faint);
+    stroke-width:1;
+    fill:none;
+  }
+  .chart-svg .line-win{
+    stroke:var(--winner);
+    stroke-width:2.4;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .chart-svg .line-lose{
+    stroke:var(--ink);
+    stroke-width:1.6;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .chart-svg .line-faint{
+    stroke:var(--ink-faint);
+    stroke-width:1;
+    fill:none;
+    stroke-dasharray:1.5,3;
+  }
+  .chart-svg .area-win{fill:var(--winner-soft);}
+  .chart-svg .pt-win{fill:var(--winner);stroke:none;}
+  .chart-svg .pt-lose{fill:var(--ink);stroke:none;}
+  .chart-svg .callout-line{
+    stroke:var(--ink);
+    stroke-width:0.8;
+    fill:none;
+  }
+  .chart-svg .callout-line.win{stroke:var(--winner);}
+  .chart-svg .bar-win{fill:var(--winner);}
+  .chart-svg .bar-win-soft{fill:var(--winner);opacity:0.32;}
+  .chart-svg .bar-lose{fill:var(--ink);}
+  .chart-svg .bar-lose-soft{fill:var(--ink);opacity:0.32;}
+
+  /* =================================================================
+     THE QUOTE-PULL — two-column verdict
+     ================================================================= */
+  .verdict{
+    margin:160px 0 120px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    border-top:1px solid var(--rule);
+    padding-top:80px;
+  }
+  .verdict .side{
+    font-size:21px;
+    font-weight:500;
+    line-height:1.32;
+    letter-spacing:-0.012em;
+  }
+  .verdict .side .who{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--ink-faint);
+    margin-bottom:18px;
+    display:block;
+  }
+  .verdict .side.winner .who{color:var(--winner);}
+  .verdict .side strong{font-weight:600;}
+
+  /* =================================================================
+     CLOSING — the three sentences the page leaves you with
+     ================================================================= */
+  .closing{
+    margin-top:120px;
+    border-top:1px solid var(--rule);
+    padding-top:48px;
+  }
+  .closing .tag{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-faint);
+    letter-spacing:0.04em;
+    margin-bottom:32px;
+  }
+  .closing ol{
+    list-style:none;
+    counter-reset:c;
+    margin-top:32px;
+  }
+  .closing li{
+    counter-increment:c;
+    font-size:21px;
+    font-weight:500;
+    line-height:1.35;
+    letter-spacing:-0.012em;
+    max-width:880px;
+    padding:32px 0 32px 80px;
+    position:relative;
+    border-bottom:1px solid var(--rule);
+  }
+  .closing li:last-child{border-bottom:none;}
+  .closing li::before{
+    content:counter(c);
+    position:absolute;
+    left:0;top:24px;
+    font-size:48px;
+    font-weight:300;
+    color:var(--ink-faint);
+    line-height:1;
+    letter-spacing:-0.04em;
+  }
+  .closing li em{
+    font-style:normal;
+    color:var(--winner);
+    font-weight:600;
+  }
+  .closing li strong{font-weight:600;}
+
+  .colophon{
+    margin-top:96px;
+    padding-top:32px;
+    border-top:1px solid var(--rule);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:24px;
+    font-size:13px;
+    color:var(--ink-faint);
+    font-weight:500;
+  }
+  .colophon a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+  .colophon a:hover{color:var(--winner);}
+
+  @media (max-width:780px){
+    .frame{padding:48px 24px 80px;}
+    .verdict{grid-template-columns:1fr;gap:48px;}
+    .answer .number{font-size:38vw;}
+    .closing li{font-size:18px;padding-left:60px;}
+    .closing li::before{font-size:36px;}
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+
+<!-- ====================================================================
+     OPENING — sets up the question
+     ==================================================================== -->
+<section class="opener">
+  <div class="meta">
+    <span>India · listed quick-commerce</span>
+    <span>FY25–FY26</span>
+    <span>8 quarters of disclosed data</span>
+    <span>May 2026</span>
+  </div>
+  <h1 class="lede">
+    For most of the last decade, "Zomato vs. Swiggy" meant the same race: <span class="quiet">two food delivery apps, racing for the same customer, the same restaurant, the same scooter at the same red light.</span>
+  </h1>
+  <p class="lede">
+    Eight quarters of public data tells a different story now. Both food delivery businesses look identical on paper — same growth, same margin. <em>The race they were really running is hiding inside their second bet.</em>
+  </p>
+</section>
+
+<!-- ====================================================================
+     THE ENORMOUS NUMBER — the answer, before the question is finished
+     ==================================================================== -->
+<section class="answer">
+  <p class="setup">By March 2026, this share of Eternal's total B2C transaction volume was no longer food delivery. It was Blinkit.</p>
+  <div class="number">52<sup>%</sup></div>
+  <p class="caption">
+    At Swiggy, the same number is <span class="swg">47%</span>. The five-point difference doesn't sound like much. It is the whole argument.
+  </p>
+</section>
+
+<!-- ====================================================================
+     MOVEMENT 1 — Food delivery is now identical at both companies
+     ==================================================================== -->
+<section class="movement">
+  <div class="movement-tag">MOVEMENT ONE</div>
+  <h2>The race everyone still talks about is the one that already ended in a draw.</h2>
+</section>
+
+<div class="prose">
+  <p>Through FY23 and most of FY24, Zomato's food delivery business held a clear operational lead — faster margin expansion, better unit economics, the smarter operator narrative. That gap has closed completely.</p>
+  <p>By Q4 FY26, Zomato earns <strong>3.4%</strong> EBITDA on every rupee of food delivery GOV. Swiggy earns <strong>3.3%</strong>. The two grow at near-identical rates. There is no longer an "operator quality" argument to be made about food delivery.</p>
+</div>
+
+<!-- =========================  CHART 1: FD MARGIN CONVERGENCE  =========== -->
+<div class="chart-block">
+  <h3 class="chart-title">Swiggy's food delivery margin caught up to Zomato's, and then they both stopped moving.</h3>
+  <p class="chart-deck">Adjusted EBITDA as a percentage of food delivery GOV, by quarter.</p>
+
+  <svg class="chart-svg" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid meet">
+    <!-- Layout: chart area x: 100 - 1080; y: 60 - 360. 8 quarters across, margin 0% bottom -> 4% top -->
+    <!-- Faint gridlines at 0,1,2,3,4 -->
+    <line class="gridline" x1="100" y1="60"  x2="1080" y2="60"/>
+    <line class="gridline" x1="100" y1="135" x2="1080" y2="135"/>
+    <line class="gridline" x1="100" y1="210" x2="1080" y2="210"/>
+    <line class="gridline" x1="100" y1="285" x2="1080" y2="285"/>
+    <line class="baseline" x1="100" y1="360" x2="1080" y2="360"/>
+
+    <!-- y axis ticks -->
+    <text class="ax-tick" x="92" y="64" text-anchor="end">4%</text>
+    <text class="ax-tick" x="92" y="214" text-anchor="end">2%</text>
+    <text class="ax-tick" x="92" y="364" text-anchor="end">0%</text>
+
+    <!-- x axis ticks - 8 quarters -->
+    <!-- positions: 100, 240, 380, 520, 660, 800, 940, 1080 (step 140) -->
+    <text class="ax-tick" x="100"  y="385" text-anchor="middle">Q1 FY25</text>
+    <text class="ax-tick" x="380"  y="385" text-anchor="middle">Q3 FY25</text>
+    <text class="ax-tick" x="660"  y="385" text-anchor="middle">Q1 FY26</text>
+    <text class="ax-tick" x="940"  y="385" text-anchor="middle">Q3 FY26</text>
+    <text class="ax-tick" x="1080" y="385" text-anchor="middle">Q4 FY26</text>
+
+    <!-- Data scale: 0-4% over y=360 to y=60. So y(v) = 360 - v * 75 -->
+    <!-- Zomato:  2.5, 2.7, 2.9, 3.2, 3.1, 3.3, 3.4, 3.4 -->
+    <!-- Swiggy:  0.2, 1.0, 2.1, 2.9, 3.1, 3.2, 3.1, 3.3 -->
+
+    <!-- Zomato line (the ink/loser line in this chart — neither, really, but Swiggy did the catching-up) -->
+    <polyline class="line-lose" points="100,172.5 240,157.5 380,142.5 520,120 660,127.5 800,112.5 940,105 1080,105"/>
+    <!-- Swiggy line — the brick line, because the closing of the gap is *Swiggy's* story -->
+    <polyline class="line-win" points="100,345 240,285 380,202.5 520,142.5 660,127.5 800,120 940,127.5 1080,112.5"/>
+
+    <!-- Point at start (Q1 FY25, Swiggy 0.2%) -->
+    <circle class="pt-win" cx="100" cy="345" r="4"/>
+    <!-- Callout: "Swiggy starts 2.3pp behind" -->
+    <line class="callout-line win" x1="100" y1="345" x2="160" y2="395"/>
+    <text class="callout-strong" x="160" y="410">Swiggy starts 2.3 points behind</text>
+    <text class="callout" x="160" y="425">Q1 FY25 · gap = 2.3pp</text>
+
+    <!-- Convergence point at Q1 FY26 (660, both at 127.5) — pulled to the chart for emphasis -->
+    <circle class="pt-win"  cx="660" cy="127.5" r="5"/>
+    <circle class="pt-lose" cx="660" cy="127.5" r="3"/>
+    <line class="callout-line" x1="660" y1="127.5" x2="660" y2="42"/>
+    <line class="callout-line" x1="660" y1="42"    x2="780" y2="42"/>
+    <text class="callout-strong" x="785" y="38">They meet — Q1 FY26 · both 3.1%</text>
+    <text class="callout" x="785" y="53">and they don't separate again</text>
+
+    <!-- End points -->
+    <circle class="pt-lose" cx="1080" cy="105"   r="3.5"/>
+    <text class="pt-label" x="1095" y="108">3.4%  Zomato</text>
+    <circle class="pt-win"  cx="1080" cy="112.5" r="3.5"/>
+    <text class="pt-label win" x="1095" y="128">3.3%  Swiggy</text>
+  </svg>
+</div>
+
+<div class="prose">
+  <p>Both businesses now run at roughly the same scale-adjusted profitability. The food delivery gap that used to define this comparison has flattened into a rounding error. Whatever wins the next decade for either company is not going to come from food.</p>
+</div>
+
+<!-- ====================================================================
+     MOVEMENT 2 — The real race is quick commerce
+     ==================================================================== -->
+<section class="movement">
+  <div class="movement-tag">MOVEMENT TWO</div>
+  <h2>Quick commerce <em>is the bet</em> at one company. At the other, it's still a side project.</h2>
+</section>
+
+<div class="prose">
+  <p>While the food delivery numbers were converging, both companies were quietly pouring capital into their quick-commerce arms — Blinkit for Eternal, Instamart for Swiggy. The two businesses have grown at similar percentage rates. The absolute scale has not.</p>
+</div>
+
+<!-- =========================  CHART 2: THE BIG STACK  =================== -->
+<div class="chart-block huge">
+  <h3 class="chart-title">The line where Blinkit overtook Zomato food delivery is the line where these two companies became different categories.</h3>
+  <p class="chart-deck">Total B2C GOV by quarter, food delivery + quick commerce, stacked. Eternal pair on the left, Swiggy pair on the right within each quarter.</p>
+
+  <svg class="chart-svg" viewBox="0 0 1200 540" preserveAspectRatio="xMidYMid meet">
+    <!-- Y axis: 0 to 28,000 cr maps to y=480 to y=60. scale = (480-60)/28000 = 0.015 px/cr -->
+    <!-- 8 quarter groups, each with two bars. Group center positions: 130, 260, 390, 520, 650, 780, 910, 1040 (step 130).
+         Within a group, Eternal bar centered at gc-22, Swiggy at gc+22. Bar width = 32. -->
+    <!-- Gridlines at 7K, 14K, 21K, 28K -->
+    <line class="gridline" x1="60"  y1="375" x2="1090" y2="375"/>
+    <line class="gridline" x1="60"  y1="270" x2="1090" y2="270"/>
+    <line class="gridline" x1="60"  y1="165" x2="1090" y2="165"/>
+    <line class="gridline" x1="60"  y1="60"  x2="1090" y2="60"/>
+    <line class="baseline" x1="60"  y1="480" x2="1090" y2="480"/>
+
+    <text class="ax-tick" x="52" y="378" text-anchor="end">7,000 cr</text>
+    <text class="ax-tick" x="52" y="273" text-anchor="end">14,000</text>
+    <text class="ax-tick" x="52" y="168" text-anchor="end">21,000</text>
+    <text class="ax-tick" x="52" y="63"  text-anchor="end">28,000</text>
+
+    <!-- Data:
+         Eternal: fd=[9264,9690,9913,9778,10588,11340,11583,11990]
+                  qc=[4923,6132,7798,9421,11821,13140,12715,13232]
+         Swiggy:  fd=[6298,6798,7436,7347,8000,8430,8650,9005]
+                  qc=[2724,3382,4670,4670,5380,6422,7320,7881]
+         Bar height = value * 0.015
+         For each bar: bottom = 480. FD bar: y = 480 - fd*0.015; height = fd*0.015
+                                     QC bar (stacked above FD): y = 480 - (fd+qc)*0.015; height = qc*0.015
+    -->
+
+    <!-- Q1 FY25, group center 130 -->
+    <!-- Eternal: fd=9264*0.015=138.96, qc=4923*0.015=73.85, total=212.81 -->
+    <rect class="bar-lose-soft" x="92"  y="341.0" width="32" height="138.96"/>
+    <rect class="bar-win-soft"  x="92"  y="267.2" width="32" height="73.85"/>
+    <!-- Swiggy: fd=6298*0.015=94.47, qc=2724*0.015=40.86, total=135.33 -->
+    <rect class="bar-lose-soft" x="136" y="385.5" width="32" height="94.47"/>
+    <rect class="bar-win-soft"  x="136" y="344.7" width="32" height="40.86"/>
+
+    <!-- Q2 FY25, group center 260 -->
+    <!-- Eternal: fd=145.35, qc=91.98, total=237.33 -->
+    <rect class="bar-lose-soft" x="222" y="334.7" width="32" height="145.35"/>
+    <rect class="bar-win-soft"  x="222" y="242.7" width="32" height="91.98"/>
+    <!-- Swiggy: fd=101.97, qc=50.73, total=152.70 -->
+    <rect class="bar-lose-soft" x="266" y="378.0" width="32" height="101.97"/>
+    <rect class="bar-win-soft"  x="266" y="327.3" width="32" height="50.73"/>
+
+    <!-- Q3 FY25, group center 390 -->
+    <!-- Eternal: fd=148.70, qc=116.97, total=265.66 -->
+    <rect class="bar-lose-soft" x="352" y="331.3" width="32" height="148.70"/>
+    <rect class="bar-win-soft"  x="352" y="214.3" width="32" height="116.97"/>
+    <!-- Swiggy: fd=111.54, qc=70.05, total=181.59 -->
+    <rect class="bar-lose-soft" x="396" y="368.5" width="32" height="111.54"/>
+    <rect class="bar-win-soft"  x="396" y="298.4" width="32" height="70.05"/>
+
+    <!-- Q4 FY25, group center 520 -->
+    <!-- Eternal: fd=146.67, qc=141.31, total=287.99 -->
+    <rect class="bar-lose-soft" x="482" y="333.3" width="32" height="146.67"/>
+    <rect class="bar-win-soft"  x="482" y="192.0" width="32" height="141.31"/>
+    <!-- Swiggy: fd=110.20, qc=70.05, total=180.26 -->
+    <rect class="bar-lose-soft" x="526" y="369.8" width="32" height="110.20"/>
+    <rect class="bar-win-soft"  x="526" y="299.7" width="32" height="70.05"/>
+
+    <!-- Q1 FY26, group center 650 — CROSSOVER QUARTER -->
+    <!-- Eternal: fd=158.82, qc=177.31, total=336.13 — QC > FD here -->
+    <rect class="bar-lose"      x="612" y="321.2" width="32" height="158.82"/>
+    <rect class="bar-win"       x="612" y="143.9" width="32" height="177.31"/>
+    <!-- Swiggy: fd=120.00, qc=80.70, total=200.70 -->
+    <rect class="bar-lose-soft" x="656" y="360.0" width="32" height="120.00"/>
+    <rect class="bar-win-soft"  x="656" y="279.3" width="32" height="80.70"/>
+
+    <!-- Q2 FY26, group center 780 -->
+    <!-- Eternal: fd=170.10, qc=197.10, total=367.20 -->
+    <rect class="bar-lose-soft" x="742" y="309.9" width="32" height="170.10"/>
+    <rect class="bar-win"       x="742" y="112.8" width="32" height="197.10"/>
+    <!-- Swiggy: fd=126.45, qc=96.33, total=222.78 -->
+    <rect class="bar-lose-soft" x="786" y="353.6" width="32" height="126.45"/>
+    <rect class="bar-win-soft"  x="786" y="257.2" width="32" height="96.33"/>
+
+    <!-- Q3 FY26, group center 910 -->
+    <!-- Eternal: fd=173.75, qc=190.73, total=364.47 -->
+    <rect class="bar-lose-soft" x="872" y="306.3" width="32" height="173.75"/>
+    <rect class="bar-win"       x="872" y="115.5" width="32" height="190.73"/>
+    <!-- Swiggy: fd=129.75, qc=109.80, total=239.55 -->
+    <rect class="bar-lose-soft" x="916" y="350.3" width="32" height="129.75"/>
+    <rect class="bar-win-soft"  x="916" y="240.5" width="32" height="109.80"/>
+
+    <!-- Q4 FY26, group center 1040 -->
+    <!-- Eternal: fd=179.85, qc=198.48, total=378.33 -->
+    <rect class="bar-lose-soft" x="1002" y="300.2" width="32" height="179.85"/>
+    <rect class="bar-win"       x="1002" y="101.7" width="32" height="198.48"/>
+    <!-- Swiggy: fd=135.08, qc=118.22, total=253.29 -->
+    <rect class="bar-lose-soft" x="1046" y="344.9" width="32" height="135.08"/>
+    <rect class="bar-win-soft"  x="1046" y="226.7" width="32" height="118.22"/>
+
+    <!-- X axis labels — every quarter -->
+    <g class="ax-tick">
+      <text x="130"  y="500" text-anchor="middle">Q1</text>
+      <text x="260"  y="500" text-anchor="middle">Q2</text>
+      <text x="390"  y="500" text-anchor="middle">Q3</text>
+      <text x="520"  y="500" text-anchor="middle">Q4</text>
+      <text x="650"  y="500" text-anchor="middle">Q1</text>
+      <text x="780"  y="500" text-anchor="middle">Q2</text>
+      <text x="910"  y="500" text-anchor="middle">Q3</text>
+      <text x="1040" y="500" text-anchor="middle">Q4</text>
+      <text x="325"  y="518" text-anchor="middle" fill="#7a6b5e">FY25</text>
+      <text x="845"  y="518" text-anchor="middle" fill="#7a6b5e">FY26</text>
+    </g>
+
+    <!-- Crossover callout — Q1 FY26, where Blinkit overtakes Zomato food -->
+    <!-- The QC bar at Q1 FY26 starts at y=143.9, the FD bar tops at y=321.2 -->
+    <line class="callout-line win" x1="628" y1="200" x2="430" y2="120"/>
+    <text class="callout-strong" x="425" y="105" text-anchor="end" style="fill:#c9532b;">Blinkit overtakes Zomato food delivery</text>
+    <text class="callout" x="425" y="120" text-anchor="end">Q1 FY26 — quick commerce becomes Eternal's larger</text>
+    <text class="callout" x="425" y="135" text-anchor="end">business and never gives the lead back</text>
+
+    <!-- Totals at the end - label the Q4 FY26 totals -->
+    <text class="pt-label win" x="1018" y="92" text-anchor="middle">25,222</text>
+    <text class="pt-label" x="1062" y="218" text-anchor="middle">16,886</text>
+
+    <!-- Small legend, bottom right -->
+    <g transform="translate(900,448)">
+      <rect class="bar-win" x="0" y="0" width="10" height="10"/>
+      <text class="ax-label" x="16" y="9">Quick commerce GOV</text>
+      <rect class="bar-lose-soft" x="160" y="0" width="10" height="10"/>
+      <text class="ax-label" x="176" y="9">Food delivery GOV</text>
+    </g>
+  </svg>
+</div>
+
+<div class="prose">
+  <p>Look at the Eternal pair on the right of each group. In Q1 FY25, the brick-colored Blinkit stack is the smaller half of the bar. By Q1 FY26, it's the larger half. By Q4 FY26, it's not close.</p>
+  <p>Now look at the Swiggy pair. The brick is bigger every quarter — but it never crosses the line. <strong>The Swiggy company still gets most of its B2C transaction volume from food delivery.</strong> The Eternal company doesn't.</p>
+</div>
+
+<!-- ====================================================================
+     MOVEMENT 3 — Inside the QC bet — what's actually happening
+     ==================================================================== -->
+<section class="movement">
+  <div class="movement-tag">MOVEMENT THREE</div>
+  <h2>Inside the quick-commerce bet, the story is more interesting than "Blinkit is winning."</h2>
+</section>
+
+<div class="prose">
+  <p>Blinkit has positive contribution margin. Instamart does not. That part of the popular narrative is correct. But the part that says <strong>Instamart is falling further behind</strong> is wrong — at least on the unit-economics curve. The gap between the two has been narrowing for six straight quarters, and Instamart is the one doing the work to close it.</p>
+</div>
+
+<!-- =========================  CHART 3: CONTRIBUTION MARGIN  ============= -->
+<div class="chart-block">
+  <h3 class="chart-title">Instamart is bleeding less every quarter — but it's still bleeding.</h3>
+  <p class="chart-deck">Contribution margin as % of GOV, by quarter. The dashed line is breakeven.</p>
+
+  <svg class="chart-svg" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid meet">
+    <!-- y scale: +4 to -7 maps to y=60 to y=380. range = 11 units over 320 px = 29.09 px/unit
+         y(v) = 60 + (4 - v) * 29.09 -->
+    <!-- breakeven (v=0) at y = 60 + 4*29.09 = 176.4 -->
+
+    <!-- Gridlines -->
+    <line class="gridline" x1="100" y1="60"  x2="1080" y2="60"/>
+    <line class="gridline" x1="100" y1="118" x2="1080" y2="118"/>
+    <line class="line-faint" x1="100" y1="176.4" x2="1080" y2="176.4"/>
+    <line class="gridline" x1="100" y1="234.6" x2="1080" y2="234.6"/>
+    <line class="gridline" x1="100" y1="292.7" x2="1080" y2="292.7"/>
+    <line class="gridline" x1="100" y1="350.9" x2="1080" y2="350.9"/>
+
+    <text class="ax-tick" x="92" y="64"   text-anchor="end">+4%</text>
+    <text class="ax-tick" x="92" y="122"  text-anchor="end">+2%</text>
+    <text class="ax-tick" x="92" y="180"  text-anchor="end">0%</text>
+    <text class="ax-tick" x="92" y="238"  text-anchor="end">−2%</text>
+    <text class="ax-tick" x="92" y="296"  text-anchor="end">−4%</text>
+    <text class="ax-tick" x="92" y="354"  text-anchor="end">−6%</text>
+    <text class="ax-label" x="1088" y="173">breakeven</text>
+
+    <!-- x positions: 100, 240, 380, 520, 660, 800, 940, 1080 -->
+    <text class="ax-tick" x="100"  y="402" text-anchor="middle">Q1 FY25</text>
+    <text class="ax-tick" x="380"  y="402" text-anchor="middle">Q3 FY25</text>
+    <text class="ax-tick" x="660"  y="402" text-anchor="middle">Q1 FY26</text>
+    <text class="ax-tick" x="940"  y="402" text-anchor="middle">Q3 FY26</text>
+    <text class="ax-tick" x="1080" y="402" text-anchor="middle">Q4 FY26</text>
+
+    <!-- Data
+         Blinkit:   +2.4, +2.9, +1.4, +0.9, +1.6, +2.5, +3.0, +3.5
+         Instamart: -5.8, -6.4, -5.7, -4.2, -3.2, -2.5, -2.4, -1.8
+         y(v) = 60 + (4-v)*29.09 -->
+    <!-- Blinkit (the steady leader, in ink) y: 60+(4-2.4)*29.09=106.5, (4-2.9)*=92.0, (4-1.4)*=135.6, (4-0.9)*=150.2, (4-1.6)*=129.8, (4-2.5)*=103.6, (4-3.0)*=89.1, (4-3.5)*=74.5 -->
+    <polyline class="line-lose" points="100,106.5 240,92.0 380,135.6 520,150.2 660,129.8 800,103.6 940,89.1 1080,74.5"/>
+    <!-- Instamart (the chart's protagonist — closing the gap — in brick) y -->
+    <polyline class="line-win" points="100,345.1 240,362.5 380,342.2 520,298.6 660,269.5 800,235.1 940,232.2 1080,212.4"/>
+
+    <!-- The pivot point: Q2 FY25 (instamart worst, -6.4) -->
+    <circle class="pt-win" cx="240" cy="362.5" r="4"/>
+    <line class="callout-line win" x1="240" y1="362.5" x2="290" y2="420"/>
+    <text class="callout-strong" x="295" y="420" style="fill:#c9532b;">Instamart bottoms out at −6.4%</text>
+    <text class="callout" x="295" y="435">Q2 FY25 · then climbs every quarter for the next six</text>
+
+    <!-- Endpoints — labels offset to the right -->
+    <circle class="pt-lose" cx="1080" cy="74.5" r="4"/>
+    <text class="pt-label" x="1095" y="78">+3.5%  Blinkit</text>
+    <circle class="pt-win" cx="1080" cy="212.4" r="4"/>
+    <text class="pt-label win" x="1095" y="216">−1.8%  Instamart</text>
+
+    <!-- Annotation - the closing gap. Pull bracket further right and move text beyond it. -->
+    <line class="callout-line" x1="1230" y1="74.5"  x2="1230" y2="212.4"/>
+    <line class="callout-line" x1="1225" y1="74.5"  x2="1230" y2="74.5"/>
+    <line class="callout-line" x1="1225" y1="212.4" x2="1230" y2="212.4"/>
+    <text class="callout" x="1244" y="138">gap</text>
+    <text class="callout-strong" x="1244" y="155">5.3pp</text>
+    <text class="callout" x="1244" y="170">(was 9.3)</text>
+  </svg>
+</div>
+
+<div class="prose">
+  <p>The gap was <strong>9.3 percentage points</strong> at its widest, in Q2 FY25. It now sits at 5.3. Instamart improved its contribution margin by 4.0 points in eight quarters; Blinkit improved by 1.1.</p>
+  <p>This doesn't mean Swiggy is winning. It means the popular shorthand of "Blinkit profitable, Instamart broken" is missing the actual operating reality: <strong>one of these businesses is working hard on the unit-level problem and making real progress. It's just doing so from below the waterline.</strong></p>
+</div>
+
+<!-- =========================  CHART 4: DARK STORE PRODUCTIVITY  ============= -->
+<div class="chart-block">
+  <h3 class="chart-title">Both companies' dark stores are converging on the same number — around ₹7 crore of GOV per store per quarter.</h3>
+  <p class="chart-deck">Looks like a physical ceiling. Same 90-day window, same 2-kilometer catchment, same Indian Tier 1 demand density.</p>
+
+  <svg class="chart-svg" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid meet">
+    <!-- y scale: 4.0 to 8.0 over y=60 to y=360, range 4 units over 300 px = 75 px/unit
+         y(v) = 60 + (8 - v) * 75 -->
+    <line class="gridline" x1="100" y1="60"  x2="1080" y2="60"/>
+    <line class="gridline" x1="100" y1="135" x2="1080" y2="135"/>
+    <line class="gridline" x1="100" y1="210" x2="1080" y2="210"/>
+    <line class="gridline" x1="100" y1="285" x2="1080" y2="285"/>
+    <line class="baseline" x1="100" y1="360" x2="1080" y2="360"/>
+
+    <text class="ax-tick" x="92" y="64"  text-anchor="end">₹8 cr</text>
+    <text class="ax-tick" x="92" y="139" text-anchor="end">₹7 cr</text>
+    <text class="ax-tick" x="92" y="214" text-anchor="end">₹6 cr</text>
+    <text class="ax-tick" x="92" y="289" text-anchor="end">₹5 cr</text>
+    <text class="ax-tick" x="92" y="364" text-anchor="end">₹4 cr</text>
+
+    <text class="ax-tick" x="100"  y="385" text-anchor="middle">Q1 FY25</text>
+    <text class="ax-tick" x="380"  y="385" text-anchor="middle">Q3 FY25</text>
+    <text class="ax-tick" x="660"  y="385" text-anchor="middle">Q1 FY26</text>
+    <text class="ax-tick" x="940"  y="385" text-anchor="middle">Q3 FY26</text>
+    <text class="ax-tick" x="1080" y="385" text-anchor="middle">Q4 FY26</text>
+
+    <!-- ₹7 ceiling band -->
+    <rect x="100" y="120" width="980" height="30" fill="#c9532b" opacity="0.08"/>
+    <text class="ax-label" x="108" y="115">the ceiling</text>
+
+    <!-- Data
+         Blinkit:   7.70, 7.75, 7.74, 7.24, 7.66, 7.37, 6.87, 6.96
+         Instamart: 4.89, 5.55, 6.62, 4.57, 5.07, 5.74, 6.44, 6.90
+         y(v) = 60 + (8-v)*75 -->
+    <!-- Blinkit y: (8-7.70)*75=22.5+60=82.5, (8-7.75)=18.75+60=78.75, (8-7.74)=19.5+60=79.5, (8-7.24)=57+60=117, (8-7.66)=25.5+60=85.5, (8-7.37)=47.25+60=107.25, (8-6.87)=84.75+60=144.75, (8-6.96)=78+60=138 -->
+    <polyline class="line-lose" points="100,82.5 240,78.75 380,79.5 520,117 660,85.5 800,107.25 940,144.75 1080,138"/>
+    <!-- Instamart y: (8-4.89)*75=233.25+60=293.25, (8-5.55)=183.75+60=243.75, (8-6.62)=103.5+60=163.5, (8-4.57)=257.25+60=317.25, (8-5.07)=219.75+60=279.75, (8-5.74)=169.5+60=229.5, (8-6.44)=117+60=177, (8-6.90)=82.5+60=142.5 -->
+    <polyline class="line-win" points="100,293.25 240,243.75 380,163.5 520,317.25 660,279.75 800,229.5 940,177 1080,142.5"/>
+
+    <!-- start points -->
+    <circle class="pt-lose" cx="100" cy="82.5" r="3.5"/>
+    <text class="pt-label" x="115" y="80">₹7.70</text>
+    <circle class="pt-win" cx="100" cy="293.25" r="3.5"/>
+    <text class="pt-label win" x="115" y="298">₹4.89</text>
+
+    <!-- end points -->
+    <circle class="pt-lose" cx="1080" cy="138" r="3.5"/>
+    <text class="pt-label" x="1095" y="142">₹6.96  Blinkit</text>
+    <circle class="pt-win" cx="1080" cy="142.5" r="3.5"/>
+    <text class="pt-label win" x="1095" y="158">₹6.90  Instamart</text>
+
+    <!-- Callout near convergence (last point) — pull text up and right -->
+    <line class="callout-line" x1="1080" y1="138" x2="1080" y2="40"/>
+    <line class="callout-line" x1="1080" y1="40"  x2="900" y2="40"/>
+    <text class="callout-strong" x="895" y="36" text-anchor="end">A ₹0.06 gap, having started ₹2.81 apart.</text>
+    <text class="callout" x="895" y="51" text-anchor="end">Possibly the natural limit of a 2-km dark store catchment.</text>
+
+    <!-- Annotation on instamart's improvement — point to Q3 FY26 -->
+    <line class="callout-line win" x1="940" y1="177" x2="640" y2="230"/>
+    <text class="callout-strong" x="635" y="234" text-anchor="end" style="fill:#c9532b;">Instamart climbs back</text>
+    <text class="callout" x="635" y="249" text-anchor="end">stopped opening stores · let existing ones mature</text>
+
+    <!-- Annotation on blinkit's decline -->
+    <line class="callout-line" x1="940" y1="144.75" x2="940" y2="100"/>
+    <text class="callout-strong" x="940" y="92" text-anchor="middle">Blinkit's productivity slips</text>
+    <text class="callout" x="940" y="78" text-anchor="middle">tax of expanding into thinner neighborhoods</text>
+  </svg>
+</div>
+
+<div class="prose">
+  <p>Two opposite trends, both ending in the same place. Blinkit's per-store output declined as it added 1,300 new stores into less dense neighborhoods. Instamart's climbed as it stopped expanding and let the network mature.</p>
+  <p>The fact that they meet at <strong>~₹7 cr</strong> suggests this number isn't an operator choice. It's the demand inside a 2-kilometer radius of a dark store in an Indian Tier 1 city. <em>That ceiling, once acknowledged, becomes the next strategic problem either company has to solve — through automation, larger stores, or smarter SKU mix.</em></p>
+</div>
+
+<!-- ====================================================================
+     VERDICT — the two-sided payoff
+     ==================================================================== -->
+<section class="verdict">
+  <div class="side winner">
+    <span class="who">ETERNAL</span>
+    <p>A quick-commerce company with a profitable food delivery business attached. <strong>52% of B2C GOV is Blinkit.</strong> Stock has rerated to all-time highs. The parent renamed itself.</p>
+  </div>
+  <div class="side">
+    <span class="who">SWIGGY</span>
+    <p>A food-delivery company with a struggling quick-commerce business attached. <strong>47% of B2C GOV is Instamart.</strong> Stock sits 44% below its 52-week high. Quick commerce reframed as a "deliberate slowdown."</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     CLOSING — what to leave with
+     ==================================================================== -->
+<section class="closing">
+  <div class="tag">THREE THINGS TO LEAVE WITH</div>
+  <ol>
+    <li>Food delivery in India is now a converged two-player commodity. <strong>Same growth, same margin, same MTU trajectory.</strong> Neither company can win the future by being better at food delivery — that race has ended.</li>
+    <li>Inside quick commerce, the headline narrative is half right. Blinkit has the better economics; Instamart has been improving them faster. <em>The race isn't margin — it's scale.</em> Blinkit's absolute GOV lead widens every quarter, even as the contribution-margin gap closes.</li>
+    <li>The single decision that defines this comparison was made roughly five quarters ago: <strong>Eternal made quick commerce its main bet and structured the company around it</strong> (separate apps, separate P&Ls, parent rename, public-market communication). Swiggy kept Instamart as a tab inside a super-app. That choice now explains the entire valuation gap.</li>
+  </ol>
+</section>
+
+<div class="colophon">
+  <div>
+    Self-directed analytics project · QA → Data Analytics
+    &nbsp;·&nbsp; 8 quarters of public quarterly disclosures, Eternal &amp; Swiggy Ltd · May 2026
+  </div>
+  <div>
+    <a href="./analysis.md">read the full analysis</a>
+    &nbsp;·&nbsp;
+    <a href="./data/SOURCES.md">data sources</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/">repo</a>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

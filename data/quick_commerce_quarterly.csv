@@ -1,0 +1,17 @@
+quarter,fiscal_year,quarter_end_date,company,segment,gov_inr_cr,revenue_inr_cr,adj_ebitda_inr_cr,adj_ebitda_margin_pct_of_gov,contribution_margin_pct,dark_stores,cities,mtu_millions,aov_inr,source_tag
+Q1FY25,FY25,2024-06-30,Eternal,Blinkit,4923,942,-3,-0.1,2.4,639,40,7.6,635,investor_deck
+Q2FY25,FY25,2024-09-30,Eternal,Blinkit,6132,1156,8,0.1,2.9,791,49,8.1,648,investor_deck
+Q3FY25,FY25,2024-12-31,Eternal,Blinkit,7798,1399,-103,-1.3,1.4,1007,73,10.6,707,investor_deck
+Q4FY25,FY25,2025-03-31,Eternal,Blinkit,9421,1709,-178,-1.9,0.9,1301,107,13.7,665,investor_deck
+Q1FY26,FY26,2025-06-30,Eternal,Blinkit,11821,2400,-162,-1.4,1.6,1544,124,17.5,704,investor_deck
+Q2FY26,FY26,2025-09-30,Eternal,Blinkit,13140,3068,-72,-0.5,2.5,1782,131,21.0,716,investor_deck
+Q3FY26,FY26,2025-12-31,Eternal,Blinkit,12715,3550,42,0.3,3.0,1850,148,24.2,706,investor_deck
+Q4FY26,FY26,2026-03-31,Eternal,Blinkit,13232,3905,98,0.7,3.5,1900,160,25.4,718,investor_deck
+Q1FY25,FY25,2024-06-30,Swiggy,Instamart,2724,374,-247,-9.1,-5.8,557,32,4.7,520,prospectus_deck
+Q2FY25,FY25,2024-09-30,Swiggy,Instamart,3382,468,-358,-10.6,-6.4,609,43,5.1,531,prospectus_deck
+Q3FY25,FY25,2024-12-31,Swiggy,Instamart,4670,689,-578,-12.4,-5.7,705,76,6.5,527,investor_deck
+Q4FY25,FY25,2025-03-31,Swiggy,Instamart,4670,830,-840,-18.0,-4.2,1021,124,7.7,499,investor_deck
+Q1FY26,FY26,2025-06-30,Swiggy,Instamart,5380,1226,-893,-16.6,-3.2,1062,127,9.4,556,investor_deck
+Q2FY26,FY26,2025-09-30,Swiggy,Instamart,6422,2384,-1244,-19.4,-2.5,1119,129,10.8,627,investor_deck
+Q3FY26,FY26,2025-12-31,Swiggy,Instamart,7320,2839,-1200,-16.4,-2.4,1136,129,12.0,674,investor_deck
+Q4FY26,FY26,2026-03-31,Swiggy,Instamart,7881,3135,-858,-10.9,-1.8,1143,129,13.5,700,investor_deck
